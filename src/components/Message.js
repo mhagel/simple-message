@@ -5,7 +5,10 @@ import './Message.css';
 class Message extends Component {
   render() {
     return (
-      <div className="Message">Message: {this.state.text} ({this.state.date})</div>
+      <div className="Message">
+        <span className="text">{this.state.text}</span><br/>
+        <span className="date">({this.state.date})</span>
+      </div>
     );
   }
 
