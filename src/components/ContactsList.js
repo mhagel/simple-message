@@ -16,16 +16,16 @@ class ContactsList extends Component {
     super(props);
     this.state = { 
         contacts: [
-            {name: 'Henrik', phone: '(303) 555-1234'},
-            {name: 'Arthur', phone: '(720) 444-4321'},
-            {name: 'Minnie', phone: '(303) 333-5678'},
+            {name: 'Henrik', total: 3},
+            {name: 'Arthur', total: 7},
+            {name: 'Minnie', total: 11},
         ]
     };
   }
 
   renderContacts() {
     return this.state.contacts.map(contact => (
-        <Contact {...contact}/>
+        <Contact key={contact.name} {...contact}/>
     ));
   }
 };

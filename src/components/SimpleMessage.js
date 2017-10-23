@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import './SimpleMessage.css';
 import ContactsList from './ContactsList';
+import MessageHistory from './MessageHistory';
 
 class SimpleMessage extends Component {
   render() {
@@ -9,6 +10,7 @@ class SimpleMessage extends Component {
       <div>
         <div className="SimpleMessage">Simple Message: {this.state.greeting}</div>
         <ContactsList />
+        <MessageHistory />
       </div>
     );
   }

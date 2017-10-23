@@ -5,13 +5,13 @@ import './Contact.css';
 class Contact extends Component {
   render() {
     return (
-      <div className="Contact">Contact: {this.state.name}, Phone: {this.state.phone}</div>
+      <div className="Contact">Contact: {this.state.name} ({this.state.total})</div>
     );
   }
 
   constructor(props) {
     super(props);
-    this.state = { name: this.props.name, phone: this.props.phone };
+    this.state = { name: this.props.name, total: this.props.total };
   }
 };
 
