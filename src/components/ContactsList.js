@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import './ContactsList.css';
 import Contact from './Contact';
+import { getContacts } from '../MessageService';
 
 class ContactsList extends Component {
   render() {
@@ -16,32 +17,25 @@ class ContactsList extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {contacts: []};
+    this.state = {};
+    this.getContacts = getContacts.bind(this);
   }
 
   componentDidMount() {
-    this.getContacts();
+    this.getMyContacts();
   }
 
-  getContacts() {
-    let fakeContacts = [
-      {name: 'Henrik', total: 3, id: 1},
-      {name: 'Arthur', total: 7, id: 2},
-      {name: 'Minnie', total: 11, id: 3},
-    ];
-
-    this.setState({contacts: fakeContacts});
-    
-    // fetch('https://api.com/api/contacts').then(
-    //   ({ res }) => {
-    //     this.setState({contacts: res});
-    //   });
+  getMyContacts() {
+    this.getContacts().then(
+      res => {
+        this.setState({contacts: res.users});
+      });
   }
 
   renderContacts() {
-    if (this.state.contacts.length) {
+    if (this.state.contacts) {
       return this.state.contacts.map(contact => (
-          <Contact key={contact.name} {...contact}/>
+          <Contact key={contact.id} {...contact}/>
       ));
     } else {
       return <div>Loading...</div>
