@@ -7,10 +7,12 @@ import { getMessagesWith, postMessage } from '../MessageService';
 class Contact extends Component {
   render() {
     return (
-      <div class="row">
-        <div className="Contact"
-          onClick={this.showMessageHistory}>
-          {this.state.name} ({this.state.total})
+      <div>
+        <div class="row">
+          <div className="Contact"
+            onClick={this.showMessageHistory}>
+            {this.state.name} ({this.state.total})
+          </div>
         </div>
         <div className="col-sm-6 col-sm-offset-6">
           {this.renderMessages()}
