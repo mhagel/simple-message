@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import './Contact.css';
 import MessageHistory from './MessageHistory';
-import { getMessagesWith, postMessage } from '../MessageService';
+import { getMessagesWith } from '../MessageService';
 
 class Contact extends Component {
   render() {
@@ -31,7 +31,6 @@ class Contact extends Component {
   }
 
   showMessageHistory() {
-    console.log(this.state.id);
     this.setState({clickedContact: !this.state.clickedContact});
     this.getMessagesWith(this.state.id).then(
       res => {
@@ -54,7 +53,7 @@ class Contact extends Component {
     let newMessages = this.state.messages.slice();
     newMessages.push(message);
     this.setState({messages: newMessages});
-    // this.postMessage(newMessages);
+    // this.postMessage(newMessages); TODO: mock api call
     event.preventDefault();
   }
 };
