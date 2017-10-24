@@ -7,7 +7,7 @@ class Message extends Component {
     return (
       <div className="Message">
         <span className="text">{this.props.text}</span><br/>
-        <span className="date">({this.props.date})</span>
+        <small className="date">({this.props.date})</small>
       </div>
     );
   }

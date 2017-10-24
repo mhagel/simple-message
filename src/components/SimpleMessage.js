@@ -12,8 +12,8 @@ class SimpleMessage extends Component {
     return (
       <BrowserRouter>      
         <div className="SimpleMessage panel">
-          <div class="panel-heading">simple message</div>
-          <div class="panel-body">
+          <div className="panel-heading">simple message</div>
+          <div className="panel-body">
             <Route path='/' component={PrimaryView} />
             <Route path='/contacts' component={ContactsList}/>
             <Route path='/messages' component={MessageHistory}/>

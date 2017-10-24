@@ -8,7 +8,7 @@ class Contact extends Component {
   render() {
     return (
       <div>
-        <div class="row">
+        <div className="row">
           <div className="Contact"
             onClick={this.showMessageHistory}>
             {this.state.name} ({this.state.total})
@@ -50,7 +50,7 @@ class Contact extends Component {
   }
 
   handleMessageSubmit(event) {
-    let message = {text: event.target.elements[0].value, date: new Date().toDateString(), sender_user: 5};
+    let message = {text: event.target.elements[0].value, date: new Date().toISOString(), sender_user: 5};
     let newMessages = this.state.messages.slice();
     newMessages.push(message);
     this.setState({messages: newMessages});
