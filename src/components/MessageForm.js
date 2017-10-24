@@ -6,7 +6,7 @@ class MessageForm extends Component {
   render() {
     return (
       <div className="MessageForm">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <textarea className="inputBox" onChange={this.handleChange}></textarea>
           <button className="btn" type="submit">Send Message</button>
         </form>
@@ -28,6 +28,7 @@ class MessageForm extends Component {
 
   handleSubmit(event) {
     console.log(this.state.value);
+
     // POST message
     event.preventDefault();
   }

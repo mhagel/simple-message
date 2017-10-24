@@ -11,18 +11,13 @@ class SimpleMessage extends Component {
   render() {
     return (
       <BrowserRouter>      
-        <div className="SimpleMessage">Simple Message: {this.state.greeting}
+        <div className="SimpleMessage">Mepple
           <Route path='/' component={PrimaryView} />
           <Route path='/contacts' component={ContactsList} />
           <Route path='/messages' component={MessageHistory} />
         </div>
       </BrowserRouter>
     );
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = { greeting: 'Hello' };
   }
 
 };
