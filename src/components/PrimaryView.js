@@ -6,7 +6,7 @@ import ContactsList from './ContactsList';
 class PrimaryView extends Component {
   render() {
     return (
-      <div className="PrimaryView">
+      <div className="PrimaryView container">
         <ContactsList />
       </div>
     );

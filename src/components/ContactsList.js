@@ -8,7 +8,7 @@ class ContactsList extends Component {
   render() {
     return (
       <div className="ContactsList">
-        <h3>Contacts</h3>
+        <h4>Contacts</h4>
         {this.renderContacts()}
       </div>
     );

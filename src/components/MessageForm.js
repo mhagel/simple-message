@@ -6,9 +6,9 @@ class MessageForm extends Component {
   render() {
     return (
       <div className="MessageForm">
-        <form onSubmit={this.sendAndClear}>
-          <textarea className="inputBox" value={this.state.value} onChange={this.handleChange}></textarea>
-          <button className="btn" type="submit">Send Message</button>
+        <form class="form-inline" onSubmit={this.sendAndClear}>
+          <input type="text" class="form-control" value={this.state.value} onChange={this.handleChange}></input>
+          <button class="btn btn-sm btn-primary" type="submit">Send Message</button>
         </form>
       </div>
     );

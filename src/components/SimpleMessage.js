@@ -11,10 +11,10 @@ class SimpleMessage extends Component {
   render() {
     return (
       <BrowserRouter>      
-        <div className="SimpleMessage">Mepple
+        <div className="SimpleMessage panel">Mepple
           <Route path='/' component={PrimaryView} />
-          <Route path='/contacts' component={ContactsList} />
-          <Route path='/messages' component={MessageHistory} />
+          <Route path='/contacts' component={ContactsList}/>
+          <Route path='/messages' component={MessageHistory}/>
         </div>
       </BrowserRouter>
     );
