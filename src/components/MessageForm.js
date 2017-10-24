@@ -7,7 +7,7 @@ class MessageForm extends Component {
     return (
       <div className="MessageForm">
         <form onSubmit={this.sendAndClear}>
-          <textarea className="inputBox" onChange={this.handleChange}></textarea>
+          <textarea className="inputBox" value={this.state.value} onChange={this.handleChange}></textarea>
           <button className="btn" type="submit">Send Message</button>
         </form>
       </div>
