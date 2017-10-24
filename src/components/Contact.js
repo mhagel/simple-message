@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import './Contact.css';
 import MessageHistory from './MessageHistory';
-import { getMessagesWith } from '../MessageService';
+import { getMessagesWith, postMessage } from '../MessageService';
 
 class Contact extends Component {
   render() {
@@ -23,6 +23,7 @@ class Contact extends Component {
     this.getMessagesWith = getMessagesWith.bind(this);
     this.showMessageHistory = this.showMessageHistory.bind(this);
     this.renderMessages = this.renderMessages.bind(this);
+    this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
   }
 
   showMessageHistory() {
@@ -37,11 +38,20 @@ class Contact extends Component {
   renderMessages() {
     if (this.state.clickedContact) {
       return (
-        <MessageHistory messages={this.state.messages}/>
+        <MessageHistory messages={this.state.messages} onSubmit={this.handleMessageSubmit}/>
       );
     } else {
       return <div></div>
     }
+  }
+
+  handleMessageSubmit(event) {
+    let message = {text: event.target.elements[0].value, date: new Date().toDateString(), sender_user: 5};
+    let newMessages = this.state.messages.slice();
+    newMessages.push(message);
+    this.setState({messages: newMessages});
+    // this.postMessage(newMessages);
+    event.preventDefault();
   }
 };
 

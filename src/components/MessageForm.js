@@ -6,7 +6,7 @@ class MessageForm extends Component {
   render() {
     return (
       <div className="MessageForm">
-        <form onSubmit={this.props.onSubmit}>
+        <form onSubmit={this.sendAndClear}>
           <textarea className="inputBox" onChange={this.handleChange}></textarea>
           <button className="btn" type="submit">Send Message</button>
         </form>
@@ -19,10 +19,16 @@ class MessageForm extends Component {
     this.state = {value: ''};
 
     this.handleChange = this.handleChange.bind(this);
+    this.sendAndClear = this.sendAndClear.bind(this);
   }
 
   handleChange(event) {
     this.setState({value: event.target.value});
+  }
+
+  sendAndClear(event) {
+    this.props.onSubmit(event);
+    this.setState({value: ''});
   }
 };
 

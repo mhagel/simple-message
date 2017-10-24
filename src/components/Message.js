@@ -6,8 +6,8 @@ class Message extends Component {
   render() {
     return (
       <div className="Message">
-        <span className="text">{this.state.text}</span><br/>
-        <span className="date">({this.state.date})</span>
+        <span className="text">{this.props.text}</span><br/>
+        <span className="date">({this.props.date})</span>
       </div>
     );
   }
