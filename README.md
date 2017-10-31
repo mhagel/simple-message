@@ -10,7 +10,10 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 In the project directory, you can run:
 
-### `npm start`
+```
+npm install
+npm start
+```
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
